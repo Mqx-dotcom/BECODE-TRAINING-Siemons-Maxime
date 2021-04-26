@@ -81,7 +81,7 @@ when info reach dest => reassemble packets to "build" files/img/infomations
 
 ![](https://i.imgur.com/09c6lBK.png)
 
+### this theory file has been reviewed by Chakh Chamil.
 
 ![Noice](https://media.giphy.com/media/Oa79Q1oHLXIti/giphy.gif)
 
-### this theory file has been reviewed by Chakh Chamil.
