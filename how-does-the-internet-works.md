@@ -4,7 +4,7 @@
 <details open="open">
   <summary><h3 style="display: inline-block">Table of Contents</h3></summary>
   <ol>    
-    <li><a href="wWire">The INTERNET:</a>
+    <li><a href="#wire">The INTERNET:</a>
         <ul>
         <li><a href="#servers">Servers:</a></li>
       </ul>
