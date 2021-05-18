@@ -6,11 +6,11 @@ taskdone = ['test', 'done']
 
 //  OUTPUT TASKS     //
 console.log ("\n Welcome to your task manager, Press: \n");
-console.log (`${todo[0]}`)
-console.log (`${todo[1]}`)
-console.log (`${todo[2]}`)
-console.log (`${todo[3]}`)
-console.log (`${todo[4]}`)
+console.log (` ${todo[0]}`)
+console.log (` ${todo[1]}`)
+console.log (` ${todo[2]}`)
+console.log (` ${todo[3]}`)
+console.log (` ${todo[4]}`)
 console.log (`\nnb : tasks are case sensitive`)
 
 //  USER INPUT + ANSWER  //
@@ -31,14 +31,14 @@ const steps = {
     },
 // 0 //
     tasktodo: async () => {
-        const tasktodo = await question("\n\x1b[4m What do you want to do ? :\x1b[0m\xa0");
+        const tasktodo = await question("\n\x1b[4m\x1b[33m What do you want to do ? :\x1b[0m\xa0");
         if (tasktodo === '1') { return steps.seeall(); }
         if (tasktodo === '2') { return steps.addtask(); }
         if (tasktodo === '3') { return steps.deltask(); }
         if (tasktodo === '4') { return steps.marktask(); }
         if (tasktodo === '5') { return steps.exittask(); }
         if (tasktodo === 'help' || tasktodo === '!help' ) { 
-            console.log("\n Available commands, write :")
+            console.log("\nAvailable commands, write :")
             console.log(todo)
             return steps.start(); }
         if (tasktodo === '!q') { return steps.end(); }
@@ -47,7 +47,7 @@ const steps = {
     },
 // 1 //
     seeall: async () => {
-        const seeallq = await question("\n Which list do you want to see? type \x1b[31m todo/\x1b[32mdone/\x1b[33mall :\xa0 \x1b[0m");
+        const seeallq = await question("\n Which list do you want to see? type :\x1b[31m todo/\x1b[32mdone/\x1b[33mall :\xa0 \x1b[0m");
         if (seeallq === '!q') { return steps.end(); }
         if (seeallq === 'all') { 
             console.log("\nTo Do list : " + `${taskfree}`);
@@ -70,8 +70,8 @@ const steps = {
             return steps.addtask();
             }
         const count = taskfree.push(`${additem}`);
+        console.log("\nTo Do list : " + `${taskfree}`);
         console.log("N° of tasks To Do : " + `${count}`);
-        console.log("To Do list : " + `${taskfree}`);
         return steps.start();
     },
 // 3 //
@@ -96,7 +96,7 @@ const steps = {
             return steps.deltask();
             }
         taskfree.splice(delIndex, 1);
-        console.log("\n Current To Do list : " + `${taskfree}`);
+        console.log("\nCurrent To Do list : " + `${taskfree}`);
         console.log("Number of tasks To Do : " + `${delIndex}`);
         return steps.start();
       },
@@ -123,11 +123,10 @@ const steps = {
             return stepsmarktask();
             }
         taskfree.splice(delmarkIndex, 1);
-        console.log(delmarkIndex);
-        console.log(taskfree);
         const count = taskdone.push(`${delmarkitem}`);
-        console.log("Number of task marked : " + `${count}`);
+        console.log("\nNew To Do list : " + `${taskfree}`);
         console.log("Task already done : " + `${taskdone}`);
+        console.log("Number of task marked : " + `${count}`);
         return steps.start();
       },
 // 5 //
