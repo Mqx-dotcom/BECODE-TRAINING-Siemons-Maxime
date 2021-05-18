@@ -88,7 +88,9 @@ const steps = {
             console.log("Error : Task not found")
             const quittask = await question("Would you like to exit the delete task part? Please type \x1b[32m yes /\x1b[31m no: \x1b[0m ");
             if (quittask === 'no' || quittask === 'n') 
-            { return steps.deltask(); }
+            {   console.log("\nSmall reminder of the current lists:")
+                console.log("\nTo Do list : " + `${taskfree}`);
+                return steps.deltask(); }
             if (quittask  === 'yes'|| quittask === 'y') 
             { return steps.start(); }
             return steps.deltask();
